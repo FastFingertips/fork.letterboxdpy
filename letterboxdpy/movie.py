@@ -40,10 +40,10 @@ class Movie:
         self.movie_popular_reviews(dom)
 
     def __str__(self):
-      return str(self.jsonify())  
+      return json_dumps(self, indent=2, cls=Encoder)
 
     def jsonify(self):
-      return json_loads(json_dumps(self, indent=2, cls=Encoder))
+      return json_loads(self.__str__())
 
     # letterboxd.com/film/?
     def movie_cast(self, dom) -> list:

@@ -46,10 +46,11 @@ class Search:
       return self._results
 
     def __str__(self):
-      return str(self.jsonify())  
+      return json_dumps(self, indent=2, cls=Encoder)
 
     def jsonify(self):
-      return json_loads(json_dumps(self, indent=2, cls=Encoder))
+      return json_loads(self.__str__())
+
 
     def get_results(self, end_page: int=MAX_RESULTS_PAGE, max: int=MAX_RESULTS):
 

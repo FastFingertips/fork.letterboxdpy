@@ -1,5 +1,5 @@
-from letterboxdpy import user
 from json import dumps as json_dumps
+from letterboxdpy import user
 
 
 def follow_stats(following_data, followers_data):

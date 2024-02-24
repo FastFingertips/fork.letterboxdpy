@@ -42,7 +42,7 @@ if __name__ == "__main__":
 
     domain = ''
     while not len(domain.strip()):
-        domain = input('Enter domain: ')
+        domain = input('Enter url: ')
 
     scraper_instance = Scraper(domain)
 
@@ -55,3 +55,4 @@ if __name__ == "__main__":
     print(f"Title: {dom.title.string}")
     input("Click Enter to see the DOM...")
     print(f"HTML: {dom.prettify()}")
+    print("*"*20 + "\nDone!")

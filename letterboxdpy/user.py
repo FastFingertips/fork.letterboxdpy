@@ -34,10 +34,10 @@ class User:
         self.user_recent(dom)
 
     def __str__(self):
-        return self.jsonify()
+      return str(self.jsonify())  
 
-    def jsonify(self) -> str:
-        return json_loads(json_dumps(self, indent=2, cls=Encoder))
+    def jsonify(self):
+      return json_loads(json_dumps(self, indent=2, cls=Encoder))
 
     # letterboxd.com/?
     def user_avatar(self, dom) -> str:

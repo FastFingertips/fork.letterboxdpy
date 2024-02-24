@@ -26,10 +26,10 @@ class MemberListing:
             raise Exception(f"Invalid {self.__class__.__name__}")
 
     def __str__(self):
-        return self.jsonify()
+      return str(self.jsonify())  
 
-    def jsonify(self) -> dict:
-        return json_loads(json_dumps(self, indent=2, cls=MemberListing.Encoder))
+    def jsonify(self):
+      return json_loads(json_dumps(self, indent=2, cls=MemberListing.Encoder))
 
     def get_parsed_page(self, url: str) -> BeautifulSoup:
         # This fixes a blocked by cloudflare error i've encountered

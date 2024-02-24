@@ -54,10 +54,10 @@ class List:
         self.count = len(self.movies)
 
     def __str__(self):
-        return self.jsonify()
+      return str(self.jsonify())  
 
-    def jsonify(self) -> dict:
-        return json_loads(json_dumps(self, indent=2, cls=Encoder))
+    def jsonify(self):
+      return json_loads(json_dumps(self, indent=2, cls=Encoder))
 
     def get_title(self, dom) -> str:
         data = dom.find("meta", attrs={'property': 'og:title'})

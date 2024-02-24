@@ -1,7 +1,6 @@
-import sys
-import json
-sys.path.append("../")
 from letterboxdpy import user
+from json import dumps as json_dumps
+
 
 def follow_stats(following_data, followers_data):
   not_followback = []
@@ -35,4 +34,4 @@ data = follow_stats(
   user.user_following(nick)
 )
 
-print(json.dumps(data, indent=4))
+print(json_dumps(data, indent=4))

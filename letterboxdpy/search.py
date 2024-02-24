@@ -1,10 +1,11 @@
-from letterboxdpy.scraper import Scraper
-from letterboxdpy.avatar import Avatar
+from scraper import Scraper
+from avatar import Avatar
 from typing import List
 
 from json import (
   JSONEncoder,
-  dumps as json_dumps
+  dumps as json_dumps,
+  loads as json_loads,
 )
 
 
@@ -45,7 +46,7 @@ class Search:
       return self._results
 
     def __str__(self):
-      return json_dumps(self.__dict__, indent=2, cls=Encoder)
+        return json_loads(json_dumps(self, indent=2, cls=Encoder))
 
     def get_results(self, end_page: int=MAX_RESULTS_PAGE, max: int=MAX_RESULTS):
 
@@ -376,7 +377,7 @@ if __name__ == "__main__":
   print('slug 3:', get_film_slug_from_title("VENDETTA"))
 
   # test: combined
-  from letterboxdpy.movie import Movie
+  from movie import Movie
   movie_slug = get_film_slug_from_title("V for Vendetta")
   movie_instance = Movie(movie_slug)
   print(movie_instance.description)

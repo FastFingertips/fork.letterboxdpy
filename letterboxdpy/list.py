@@ -1,10 +1,11 @@
-from letterboxdpy.scraper import Scraper
+from scraper import Scraper
 from functools import wraps
 import re
 
 from json import (
   JSONEncoder,
-  dumps as json_dumps
+  dumps as json_dumps,
+  loads as json_loads
 )
 
 
@@ -55,8 +56,8 @@ class List:
     def __str__(self):
         return self.jsonify()
 
-    def jsonify(self) -> str:
-        return json_dumps(self, indent=4,cls=Encoder)
+    def jsonify(self) -> dict:
+        return json_loads(json_dumps(self, indent=2, cls=Encoder))
 
     def get_title(self, dom) -> str:
         data = dom.find("meta", attrs={'property': 'og:title'})

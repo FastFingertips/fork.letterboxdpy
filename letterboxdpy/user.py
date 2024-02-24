@@ -1,5 +1,5 @@
-from letterboxdpy.scraper import Scraper
-from letterboxdpy.avatar import Avatar
+from scraper import Scraper
+from avatar import Avatar
 from datetime import datetime
 from functools import wraps
 import re
@@ -7,6 +7,7 @@ import re
 from json import (
   JSONEncoder,
   dumps as json_dumps,
+  loads as json_loads
 )
 
 
@@ -36,7 +37,7 @@ class User:
         return self.jsonify()
 
     def jsonify(self) -> str:
-        return json_dumps(self, indent=2, cls=Encoder)
+        return json_loads(json_dumps(self, indent=2, cls=Encoder))
 
     # letterboxd.com/?
     def user_avatar(self, dom) -> str:

@@ -1,4 +1,4 @@
-from letterboxdpy.scraper import Scraper
+from scraper import Scraper
 from functools import wraps
 
 from json import (
@@ -43,7 +43,7 @@ class Movie:
         return self.jsonify()
 
     def jsonify(self) -> str:
-        return json_dumps(self, indent=2, cls=Encoder)
+        return json_loads(json_dumps(self, indent=2, cls=Encoder))
 
     # letterboxd.com/film/?
     def movie_cast(self, dom) -> list:

@@ -4,8 +4,7 @@ from typing import List
 
 from json import (
   JSONEncoder,
-  dumps as json_dumps,
-  loads as json_loads,
+  dumps as json_dumps
 )
 
 
@@ -46,10 +45,7 @@ class Search:
       return self._results
 
     def __str__(self):
-      return json_dumps(self, indent=2, cls=Encoder)
-
-    def jsonify(self):
-      return json_loads(self.__str__())
+      return json_dumps(self.__dict__, indent=2, cls=Encoder)
 
     def get_results(self, end_page: int=MAX_RESULTS_PAGE, max: int=MAX_RESULTS):
       data = {

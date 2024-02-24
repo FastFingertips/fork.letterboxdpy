@@ -35,3 +35,23 @@ class Scraper:
       raise Exception(messages)
 
     return dom
+
+if __name__ == "__main__":
+    import sys
+    sys.stdout.reconfigure(encoding='utf-8')
+
+    domain = ''
+    while not len(domain.strip()):
+        domain = input('Enter domain: ')
+
+    scraper_instance = Scraper(domain)
+
+    print(f"Headers: {scraper_instance.headers}")
+    print(f"Builder: {scraper_instance.builder}")
+
+    print(f"Parsing {domain}...")
+
+    dom = scraper_instance.get_parsed_page(domain)
+    print(f"Title: {dom.title.string}")
+    input("Click Enter to see the DOM...")
+    print(f"HTML: {dom.prettify()}")

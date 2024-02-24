@@ -185,7 +185,7 @@ if __name__ == "__main__":
     print('count:', list_instance.count)
     print('created:', date_created(list_instance))
     print('updated:', date_updated(list_instance))
-    print('tags:', list_tags(list_instance), end="\n\n")
+    print('tags:', list_tags(list_instance), end="\n"*2)
 
     # user watchlist usage:
     watchlist_instance = List("mrbs")

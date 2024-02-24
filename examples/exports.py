@@ -1,11 +1,8 @@
+from json import dump as json_dump
 from letterboxdpy import user
 import time
 import sys
 import os
-
-from json import (
-    dump as json_dump,
-)
 
 
 def save_json(path, data):

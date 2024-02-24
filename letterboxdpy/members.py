@@ -1,7 +1,7 @@
-from typing import List
 from bs4 import BeautifulSoup
-import re
+from typing import List
 import requests
+import re
 
 from json import (
     JSONEncoder,

@@ -1,4 +1,4 @@
-from letterboxdpy.scraper import Scraper
+from .scraper import Scraper
 from functools import wraps
 import re
 

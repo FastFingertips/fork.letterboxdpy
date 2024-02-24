@@ -1,5 +1,5 @@
-from letterboxdpy.scraper import Scraper
-from letterboxdpy.avatar import Avatar
+from .scraper import Scraper
+from .avatar import Avatar
 from datetime import datetime
 from functools import wraps
 import re

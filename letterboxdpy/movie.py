@@ -1,4 +1,4 @@
-from scraper import Scraper
+from letterboxdpy.scraper import Scraper
 from functools import wraps
 
 from json import (
